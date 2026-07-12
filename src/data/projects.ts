@@ -1,3 +1,7 @@
+import emprestimoLivrosImage from "../assets/projects/emprestimo-livros.svg";
+import apiCadastroLivrosImage from "../assets/projects/api-cadastro-livros.svg";
+import whatsappBotImage from "../assets/projects/whatsapp-bot.svg";
+
 export type ProjectCategory =
   | "backend"
   | "api"
@@ -58,7 +62,7 @@ export const projectsData: Project[] = [
     ],
     repositoryUrl: "https://github.com/wallaceg7/EmprestimoLivros_AspNet",
     demoUrl: "",
-    image: "/src/assets/projects/emprestimo-livros.svg",
+    image: emprestimoLivrosImage,
     featured: true,
     status: "Concluído",
     imagePlaceholderGradient: "from-blue-600 to-indigo-900"
@@ -93,7 +97,7 @@ export const projectsData: Project[] = [
     ],
     repositoryUrl: "https://github.com/wallaceg7/WebApi-CRUD-livros",
     demoUrl: "",
-    image: "/src/assets/projects/api-cadastro-livros.svg",
+    image: apiCadastroLivrosImage,
     featured: true,
     status: "Concluído",
     imagePlaceholderGradient: "from-teal-500 to-emerald-900"
@@ -125,7 +129,7 @@ export const projectsData: Project[] = [
     ],
     repositoryUrl: "https://github.com/wallaceg7/whatsapp-bot",
     demoUrl: "",
-    image: "/src/assets/projects/whatsapp-bot.svg",
+    image: whatsappBotImage,
     featured: true,
     status: "Projeto educacional",
     imagePlaceholderGradient: "from-emerald-600 to-teal-950"
