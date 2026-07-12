@@ -10,7 +10,7 @@ export const Projects: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>('Todos');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const lastFocusedElementRef = useRef<HTMLElement | null>(null);
-  
+
   const modalRef = useRef<HTMLDivElement>(null);
 
   const filters = ['Todos', 'Backend', 'APIs', 'Desktop', 'Automação'];
@@ -19,21 +19,21 @@ export const Projects: React.FC = () => {
   const filteredProjects = activeFilter === 'Todos'
     ? projectsData
     : projectsData.filter((project) => {
-        const cat = project.category;
-        if (activeFilter === 'Backend') {
-          return cat === 'backend' || cat === 'api';
-        }
-        if (activeFilter === 'APIs') {
-          return cat === 'api' || cat === 'backend';
-        }
-        if (activeFilter === 'Desktop') {
-          return cat === 'desktop' || cat === 'automation';
-        }
-        if (activeFilter === 'Automação') {
-          return cat === 'automation';
-        }
-        return false;
-      });
+      const cat = project.category;
+      if (activeFilter === 'Backend') {
+        return cat === 'backend' || cat === 'api';
+      }
+      if (activeFilter === 'APIs') {
+        return cat === 'api' || cat === 'backend';
+      }
+      if (activeFilter === 'Desktop') {
+        return cat === 'desktop' || cat === 'automation';
+      }
+      if (activeFilter === 'Automação') {
+        return cat === 'automation';
+      }
+      return false;
+    });
 
   // Category translator helper
   const translateCategory = (cat: string) => {
@@ -84,7 +84,7 @@ export const Projects: React.FC = () => {
     const focusableElements = modalRef.current.querySelectorAll<HTMLElement>(
       'a[href], button, textarea, input, select, [tabindex="0"]'
     );
-    
+
     if (focusableElements.length === 0) return;
 
     const firstElement = focusableElements[0];
@@ -115,8 +115,8 @@ export const Projects: React.FC = () => {
   }, [selectedProject]);
 
   return (
-    <section 
-      id="projects" 
+    <section
+      id="projects"
       className="py-20 px-6 max-w-5xl mx-auto w-full relative"
       aria-label="Projetos desenvolvidos"
     >
@@ -127,8 +127,9 @@ export const Projects: React.FC = () => {
         Mostrando {filteredProjects.length} projeto(s) na categoria {activeFilter}.
       </span>
 
+
       {/* Filter controls */}
-      <div 
+      <div
         className="flex flex-wrap items-center gap-2 mb-10 pb-2 border-b border-border-subtle/30 overflow-x-auto"
         role="tablist"
         aria-label="Filtros de Projetos"
@@ -143,11 +144,10 @@ export const Projects: React.FC = () => {
               aria-pressed={isActive}
               tabIndex={0}
               onClick={() => setActiveFilter(filter)}
-              className={`px-4 py-2 text-xs font-semibold rounded-xl border transition-all duration-300 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-cyan cursor-pointer ${
-                isActive
+              className={`px-4 py-2 text-xs font-semibold rounded-xl border transition-all duration-300 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-cyan cursor-pointer ${isActive
                   ? 'bg-accent-blue/10 border-accent-blue/50 text-accent-cyan shadow-sm shadow-accent-blue/5'
                   : 'bg-bg-card/50 border-border-subtle text-text-secondary hover:text-text-primary hover:border-accent-blue/30'
-              }`}
+                }`}
             >
               {filter}
             </button>
@@ -157,7 +157,7 @@ export const Projects: React.FC = () => {
 
       {/* Grid listing */}
       {filteredProjects.length > 0 ? (
-        <div 
+        <div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in"
           role="region"
           aria-label="Lista de projetos filtrados"
@@ -176,14 +176,14 @@ export const Projects: React.FC = () => {
 
       {/* Details modal overlay */}
       {selectedProject && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/75 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto animate-fade-in"
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-title"
           onClick={() => setSelectedProject(null)}
         >
-          <div 
+          <div
             ref={modalRef}
             className="w-full max-w-2xl bg-bg-card border border-border-subtle rounded-2xl overflow-hidden shadow-2xl relative my-8 text-left flex flex-col max-h-[85vh] animate-fade-in-up"
             onClick={(e) => e.stopPropagation()}
@@ -214,7 +214,7 @@ export const Projects: React.FC = () => {
 
             {/* Modal Body - Scrollable content */}
             <div className="p-6 overflow-y-auto space-y-6 flex-1">
-              
+
               {/* Title & Status */}
               <div className="space-y-2">
                 <div className="flex flex-wrap items-center justify-between gap-3">
@@ -265,8 +265,8 @@ export const Projects: React.FC = () => {
                 </h5>
                 <div className="flex flex-wrap gap-1.5" aria-label="Lista completa de tecnologias utilizadas">
                   {selectedProject.technologies.map((tech) => (
-                    <span 
-                      key={tech} 
+                    <span
+                      key={tech}
                       className="text-[10px] font-bold text-text-muted px-2.5 py-1 rounded-md bg-bg-deep border border-border-subtle/70"
                     >
                       {tech}
@@ -285,7 +285,7 @@ export const Projects: React.FC = () => {
               >
                 Fechar
               </button>
-              
+
               <ExternalLink
                 href={selectedProject.repositoryUrl}
                 ariaLabel={`Abrir o código do projeto ${selectedProject.title} no GitHub`}
