@@ -164,11 +164,7 @@ Todos os redirecionamentos externos e links de credenciais passam pelo utilitár
 ### 3. Proteção contra XSS
 O código foi auditado e não faz uso de inserções diretas de HTML, como `dangerouslySetInnerHTML`, `innerHTML`, `document.write` ou funções de execução dinâmica (`eval`, `new Function`). Todo o texto é tratado e escapado pelo React nativamente.
 
-### 4. Gestão de Variáveis de Ambiente e Segredos
-- **Aviso**: Nunca armazene senhas, chaves de API, chaves privadas ou tokens no repositório ou em arquivos `.env`. As variáveis prefixadas com `VITE_` são embutidas no build final do cliente e ficam visíveis publicamente no navegador.
-- O arquivo [`.gitignore`](file:///C:/Users/walla/OneDrive/Documentos/Projeto%20Catalago/.gitignore) foi configurado para ignorar automaticamente arquivos `.env` locais e arquivos de log.
-
-### 5. Configuração nos Provedores de Hospedagem
+### 4. Configuração nos Provedores de Hospedagem
 Arquivos de configuração foram incluídos na raiz do projeto para aplicar os cabeçalhos de segurança automaticamente no deploy:
 - **Netlify / Cloudflare**: Configurado via [`netlify.toml`](file:///C:/Users/walla/OneDrive/Documentos/Projeto%20Catalago/netlify.toml) e pelo arquivo [`_headers`](file:///C:/Users/walla/OneDrive/Documentos/Projeto%20Catalago/public/_headers).
 - **Vercel**: Configurado via [`vercel.json`](file:///C:/Users/walla/OneDrive/Documentos/Projeto%20Catalago/vercel.json).
