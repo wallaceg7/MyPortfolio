@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329" />
+      <stop offset="100%" stop-color="#050b18" />
+    </linearGradient>
+    <linearGradient id="botGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)" />
+  <rect width="96%" height="94%" x="2%" y="3%" fill="none" stroke="#1e293b" stroke-width="2" rx="16" />
+
+  <!-- Code/Grid Overlay -->
+  <path d="M 0,40 L 400,40 M 0,80 L 400,80 M 0,120 L 400,120 M 0,160 L 400,160 M 0,200 L 400,200" stroke="#1e293b" stroke-width="0.5" opacity="0.3" />
+  <path d="M 80,0 L 80,250 M 160,0 L 160,250 M 240,0 L 240,250 M 320,0 L 320,250" stroke="#1e293b" stroke-width="0.5" opacity="0.3" />
+
+  <!-- Desktop App Window (Background Layer) -->
+  <g transform="translate(60, 50)" opacity="0.95">
+    <rect width="180" height="110" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1.5" />
+    <rect width="180" height="20" rx="0" fill="#1e293b" />
+    <!-- Window circles -->
+    <circle cx="10" cy="10" r="3" fill="#ef4444" />
+    <circle cx="20" cy="10" r="3" fill="#f59e0b" />
+    <circle cx="30" cy="10" r="3" fill="#10b981" />
+    
+    <!-- Java Swing App UI Elements -->
+    <rect x="15" y="32" width="60" height="8" rx="2" fill="#334155" />
+    <rect x="15" y="47" width="150" height="35" rx="4" fill="#020617" stroke="#334155" />
+    <text x="22" y="59" fill="#10b981" font-family="monospace" font-size="8">&gt; Bot iniciado...</text>
+    <text x="22" y="72" fill="#94a3b8" font-family="monospace" font-size="8">&gt; Aguardando QR Code...</text>
+    <rect x="15" y="90" width="40" height="12" rx="3" fill="#2563eb" />
+  </g>
+
+  <!-- Browser / Message Dispatch (Foreground Layer) -->
+  <g transform="translate(170, 90)">
+    <rect width="170" height="100" rx="8" fill="#0b1329" stroke="url(#botGrad)" stroke-width="2" />
+    <rect width="170" height="18" rx="0" fill="#0f172a" />
+    <!-- Search bar -->
+    <rect x="10" y="5" width="100" height="8" rx="3" fill="#1e293b" />
+    
+    <!-- Chat Bubbles -->
+    <path d="M 20,35 C 20,30, 80,30, 80,35 L 80,48 C 80,53, 20,53, 20,48 Z" fill="#1e293b" />
+    <circle cx="27" cy="40" r="3" fill="#94a3b8" />
+    <rect x="35" y="39" width="30" height="3" rx="1.5" fill="#94a3b8" />
+
+    <path d="M 90,58 C 90,53, 150,53, 150,58 L 150,71 C 150,76, 90,76, 90,71 Z" fill="#047857" />
+    <rect x="98" y="62" width="45" height="3" rx="1.5" fill="#a7f3d0" />
+    <rect x="98" y="68" width="30" height="3" rx="1.5" fill="#a7f3d0" />
+  </g>
+
+  <!-- Automation Gear Link -->
+  <g transform="translate(210, 50)" stroke="#10b981" stroke-width="1.5" fill="none">
+    <circle cx="15" cy="15" r="10" stroke-dasharray="4,2" />
+    <circle cx="15" cy="15" r="4" fill="#10b981" />
+  </g>
+
+  <!-- Java / Selenium tag -->
+  <text x="200" y="222" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="12" font-weight="bold" letter-spacing="1">
+    &lt; Java / Swing / Selenium WebDriver &gt;
+  </text>
+</svg>

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329" />
+      <stop offset="100%" stop-color="#050b18" />
+    </linearGradient>
+    <linearGradient id="apiGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+    <linearGradient id="dbGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)" />
+  <rect width="96%" height="94%" x="2%" y="3%" fill="none" stroke="#1e293b" stroke-width="2" rx="16" />
+
+  <!-- Code/Grid Overlay -->
+  <path d="M 0,40 L 400,40 M 0,80 L 400,80 M 0,120 L 400,120 M 0,160 L 400,160 M 0,200 L 400,200" stroke="#1e293b" stroke-width="0.5" opacity="0.3" />
+  <path d="M 80,0 L 80,250 M 160,0 L 160,250 M 240,0 L 240,250 M 320,0 L 320,250" stroke="#1e293b" stroke-width="0.5" opacity="0.3" />
+
+  <!-- Database Storage Cylinder (Right) -->
+  <g transform="translate(240, 60)" opacity="0.9">
+    <!-- Cylinder 3 (Bottom) -->
+    <path d="M 10,80 C 10,70, 70,70, 70,80 L 70,110 C 70,120, 10,120, 10,110 Z" fill="url(#dbGrad)" />
+    <ellipse cx="40" cy="80" rx="30" ry="8" fill="#60a5fa" />
+    
+    <!-- Cylinder 2 (Middle) -->
+    <path d="M 10,40 C 10,30, 70,30, 70,40 L 70,70 C 70,80, 10,80, 10,70 Z" fill="url(#dbGrad)" />
+    <ellipse cx="40" cy="40" rx="30" ry="8" fill="#60a5fa" />
+
+    <!-- Cylinder 1 (Top) -->
+    <path d="M 10,0 C 10,-10, 70,-10, 70,0 L 70,30 C 70,40, 10,40, 10,30 Z" fill="url(#dbGrad)" />
+    <ellipse cx="40" cy="0" rx="30" ry="8" fill="#60a5fa" />
+    
+    <!-- LED Indicators -->
+    <circle cx="25" cy="15" r="2.5" fill="#10b981" />
+    <circle cx="25" cy="55" r="2.5" fill="#10b981" />
+    <circle cx="25" cy="95" r="2.5" fill="#10b981" />
+  </g>
+
+  <!-- REST API endpoints box (Left) -->
+  <g transform="translate(60, 75)">
+    <!-- API Router Box -->
+    <rect width="130" height="90" rx="10" fill="#0b1329" stroke="url(#apiGrad)" stroke-width="2" />
+    
+    <!-- Endpoints lines -->
+    <rect x="15" y="15" width="40" height="14" rx="4" fill="#06b6d4" opacity="0.2" />
+    <text x="20" y="26" fill="#06b6d4" font-family="monospace" font-size="10" font-weight="bold">GET</text>
+    <rect x="65" y="18" width="50" height="8" rx="2" fill="#1e293b" />
+
+    <rect x="15" y="38" width="40" height="14" rx="4" fill="#10b981" opacity="0.2" />
+    <text x="20" y="49" fill="#10b981" font-family="monospace" font-size="10" font-weight="bold">POST</text>
+    <rect x="65" y="41" width="50" height="8" rx="2" fill="#1e293b" />
+
+    <rect x="15" y="61" width="40" height="14" rx="4" fill="#f59e0b" opacity="0.2" />
+    <text x="20" y="72" fill="#f59e0b" font-family="monospace" font-size="10" font-weight="bold">PUT</text>
+    <rect x="65" y="64" width="50" height="8" rx="2" fill="#1e293b" />
+  </g>
+
+  <!-- API Connection lines -->
+  <path d="M 190,120 L 240,120" stroke="#06b6d4" stroke-dasharray="4,4" stroke-width="2" fill="none">
+    <animate attributeName="stroke-dashoffset" values="40;0" dur="2s" repeatCount="indefinite" />
+  </path>
+  <circle cx="215" cy="120" r="5" fill="#10b981" />
+
+  <!-- Bracket decoration -->
+  <text x="50" y="55" fill="#1e293b" font-family="monospace" font-size="36" font-weight="bold" opacity="0.3">{</text>
+  <text x="330" y="195" fill="#1e293b" font-family="monospace" font-size="36" font-weight="bold" opacity="0.3">}</text>
+
+  <!-- C# / .NET tag -->
+  <text x="200" y="210" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="12" font-weight="bold" letter-spacing="1">
+    &lt; C# / Web API REST / Swagger &gt;
+  </text>
+</svg>
